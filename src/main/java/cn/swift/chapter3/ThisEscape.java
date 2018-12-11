@@ -10,6 +10,7 @@ public class ThisEscape {
 
     public ThisEscape(EventSource es) {
 	es.registerListener(new EventListener() {
+	    @SuppressWarnings("unused")
 	    public void onEvent(Event e) {
 		doSomething(e);
 	    }

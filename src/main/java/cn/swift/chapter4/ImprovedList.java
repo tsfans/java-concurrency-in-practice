@@ -57,9 +57,9 @@ public class ImprovedList<T> implements List<T> {
 	return null;
     }
 
+    @SuppressWarnings("hiding")
     @Override
     public <T> T[] toArray(T[] a) {
-	// TODO Auto-generated method stub
 	return null;
     }
 

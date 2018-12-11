@@ -10,6 +10,8 @@ import cn.swift.annotation.ThreadSafe;
 @ThreadSafe
 public class BetterVector<E> extends Vector<E> {
 
+    private static final long serialVersionUID = 1L;
+
     public synchronized boolean putIfAbsent(E e) {
 	boolean absent = !contains(e);
 	if (absent) {

@@ -14,6 +14,7 @@ public class SafeListener {
     
     private SafeListener() {
 	eventListener = new EventListener() {
+	    @SuppressWarnings("unused")
 	    public void onEvent(Event e) {
 		doSomething(e);
 	    }

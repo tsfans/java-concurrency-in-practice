@@ -15,7 +15,8 @@ public class TaskExecutionWebServer extends AbstractWebServer{
 	private static final ExecutorService exec = Executors.newFixedThreadPool(N_THREADS);
 
 	public static void main(String[] args) throws Exception {
-		ServerSocket socket = new ServerSocket(80);
+		@SuppressWarnings("resource")
+        ServerSocket socket = new ServerSocket(80);
 		while(true) {
 			final Socket connection = socket.accept();
 			Runnable task = () -> handleRequest(connection);

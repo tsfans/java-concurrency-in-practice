@@ -12,7 +12,8 @@ import cn.swift.annotation.CouldBeHappier;
 public class SingleThreadWebServer extends AbstractWebServer{
 
 	public static void main(String[] args) throws Exception {
-		ServerSocket socket = new ServerSocket(80);
+		@SuppressWarnings("resource")
+        ServerSocket socket = new ServerSocket(80);
 		while(true) {
 			Socket connection = socket.accept();
 			handleRequest(connection);

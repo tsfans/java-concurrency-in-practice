@@ -12,7 +12,8 @@ import cn.swift.annotation.Sucks;
 public class ThreadPerTaskWebServer extends AbstractWebServer {
 
 	public static void main(String[] args) throws Exception {
-		ServerSocket socket = new ServerSocket(80);
+		@SuppressWarnings("resource")
+        ServerSocket socket = new ServerSocket(80);
 		while (true) {
 			final Socket connection = socket.accept();
 			Runnable task = () -> handleRequest(connection);

@@ -26,7 +26,7 @@ public class Memorizer<A, V> extends AbstractMemorizer<A, V> {
     public V compute(A arg) throws InterruptedException {
 	Future<V> f = cache.get(arg);
 	if (f == null) {
-	    Callable<V> eval = () -> {return c.compute(arg);};
+	    Callable<V> eval = () -> c.compute(arg);
 	    FutureTask<V> ft = new FutureTask<>(eval);
 	    f = cache.putIfAbsent(arg, ft);
 	    if (f == null) {

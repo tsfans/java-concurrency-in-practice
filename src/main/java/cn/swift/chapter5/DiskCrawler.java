@@ -18,7 +18,7 @@ public class DiskCrawler implements Runnable {
     public DiskCrawler(BlockingQueue<File> queue, File root, final FileFilter filter) {
 	this.queue = queue;
 	this.root = root;
-	this.fileFilter = (f) -> f.isDirectory() || filter.accept(f);
+	this.fileFilter = f -> f.isDirectory() || filter.accept(f);
     }
 
     @Override
